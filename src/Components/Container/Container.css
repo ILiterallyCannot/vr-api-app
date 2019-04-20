@@ -1,0 +1,22 @@
+.container {
+    width: 60%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+    box-shadow: 2px 2px #f9f9f9;
+}
+.header {
+    background-color: #58a50b;
+    color: #fff;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.header p{
+    width: 80%;
+}
+

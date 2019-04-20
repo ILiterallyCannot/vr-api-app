@@ -1,0 +1,33 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-top: 20px;
+}
+
+.search input {
+    width: 250px;
+    height: 20px;
+    margin: 5px 0 5px 0;
+    padding: 2px 5px 2px 5px;
+    background-color: #eef3ee;
+    border-radius: 5px;
+}
+
+.suggestions {
+    position: absolute;
+    background-color: #eef3ee;
+    z-index: 1;
+    width: 262px;
+    max-height: 30vh;
+    overflow-y: auto;
+    box-shadow: 2px 2px #f0f0f0;
+}
+
+.option {
+    cursor: pointer;
+}
+
+p.option:hover {
+    background-color: #f8f8f8;
+}
