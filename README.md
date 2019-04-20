@@ -1,3 +1,5 @@
+# Käytetyt teknologiat
+- React
 # Asennus
 - npm install
 # Käynnistys
