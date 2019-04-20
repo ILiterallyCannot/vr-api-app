@@ -5,6 +5,10 @@
     padding-top: 20px;
 }
 
+.search label{
+    font-weight: bold;
+}
+
 .search input {
     width: 250px;
     height: 20px;
@@ -21,7 +25,6 @@
     width: 262px;
     max-height: 30vh;
     overflow-y: auto;
-    box-shadow: 2px 2px #f0f0f0;
 }
 
 .option {

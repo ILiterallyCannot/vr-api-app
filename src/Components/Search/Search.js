@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import './Search.css';
+import SearchList from './SearchList'
 
 class Search extends Component {
     constructor() {
         super();
         this.state = {
             value: '',
-            filteredData: [],
+            listData: [],
             display: 'none'
         };
     }
 
     componentDidMount() {
+        document.addEventListener('submit', (event)=> event.preventDefault())
         document.addEventListener('click', event => {
             if (event.target.tagName === 'INPUT') {
                 this.setState({
-                    display: 'block'
+                    display: 'block',
                 });
             } else {
                 this.setState({
@@ -38,14 +40,14 @@ class Search extends Component {
         });
         if (event.target.value.length <= 0) {
             this.setState({
-                filteredData: Object.keys(this.props.stations)
+                listData: Object.keys(this.props.stations)
             });
         } else {
             const filtered = Object.keys(this.props.stations).filter(asema =>
                 new RegExp('^' + event.target.value, 'i').test(asema)
             );
             this.setState({
-                filteredData: filtered
+                listData: filtered
             });
         }
     };
@@ -67,15 +69,10 @@ class Search extends Component {
                         className='suggestions'
                         style={{ display: `${this.state.display}` }}
                     >
-                        {this.state.filteredData.map(station => (
-                            <p
-                                key={station}
-                                onClick={this.handleClick}
-                                className='option'
-                            >
-                                {station}
-                            </p>
-                        ))}
+                        <SearchList
+                            listData={this.state.listData}
+                            handleClick={this.handleClick}
+                        />
                     </div>
                 </div>
             </div>

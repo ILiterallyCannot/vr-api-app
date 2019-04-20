@@ -78,7 +78,10 @@ class Container extends Component {
                     let trainObj = {
                         id: departureId,
                         type: `${train.trainType} ${train.trainNumber}`,
-                        start: train.timeTableRows[0].stationShortCode,
+                        start: Object.keys(this.state.stations).filter(x =>
+                                this.state.stations[x].short ===
+                                train.timeTableRows[0].stationShortCode
+                        ),
                         end: Object.keys(this.state.stations).filter(x =>
                                 this.state.stations[x].short ===
                                 train.timeTableRows[train.timeTableRows.length - 1].stationShortCode
